@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import {SafeAreaView,
   StyleSheet,
   ScrollView,
@@ -126,6 +126,7 @@ const styles = StyleSheet.create({
     width: panjang-20,
     marginLeft: 40,
     marginRight: 40,
+    height: 40,
   },
   Impact: {
     fontFamily: 'Arial',
@@ -135,6 +136,7 @@ const styles = StyleSheet.create({
     marginLeft:40,
     marginRight: 40,
     right: 1,
+    height: 40,
   },
   urgency: {
     fontFamily: 'Arial',
@@ -144,6 +146,7 @@ const styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 40,
     left: 1,
+    height: 40,
   },
   
 });

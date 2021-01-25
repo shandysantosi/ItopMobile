@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,19 +10,35 @@ import {
   TouchableOpacity,
   Dimensions,
   Button,
+  Keyboard,
+  KeyboardAvoidingView,
+  ActivityIndicator,
 } from 'react-native';
-
-const {width: WIDTH} = Dimensions.get('window');
+import {useNavigation} from '@react-navigation/native';
 
 import IconP from 'react-native-vector-icons/Ionicons';
 import IconL from 'react-native-vector-icons/FontAwesome5';
 import { TextInput } from 'react-native-gesture-handler';
+import { Component } from 'react';
 
-export default function Form() {
+const {width: WIDTH} = Dimensions.get('window');
+
+const VALID_EMAIL = 'william.hans@jedi.id';
+const VALID_PASSWORD = '123456';
+
+
+export default function Form(){
+   
+
+    const navigation = useNavigation();
+
+
+
     return (
       <>
+        
         <View style={styles.container}>
-            
+          
             <TextInput style={styles.inputBox}
                 underlineColorAndroid="#797979"
                 placeholder= "Username"
@@ -38,13 +54,15 @@ export default function Form() {
             />
              <IconL name={'lock'} size={22} color="#D7D7D7"
             style={styles.inputIconL}/>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.buttonText}>Login</Text>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Main')}>
+                    <Text style={styles.buttonText}>Login</Text>
+                
             </TouchableOpacity>
         </View>
       </>
     );
-  };
+
+};
   
   const styles = StyleSheet.create({
     container: {

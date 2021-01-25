@@ -1,4 +1,3 @@
-
 import * as React from 'react';
 import {
   SafeAreaView,
@@ -13,16 +12,23 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
+import BellIcon from 'react-native-vector-icons/FontAwesome';
 import BackIcon from 'react-native-vector-icons/AntDesign';
 
 export default function HeaderMain() {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.goBack()}>
+		<TouchableOpacity
+          style={styles.button1}
+          onPress={() => navigation.navigate('Main')} 
+      >
         <BackIcon name={'left'} size={38} color="#ffffff"/>
-       </TouchableOpacity> 
-        <Text style={styles.headerText}>NOTIFICATION</Text>
+      </TouchableOpacity>{/*button back*/}
+        <Text style={styles.headerText}>Detail</Text>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Notif')}>
+            <BellIcon name={'bell'} size={22} color="#D9001B"/>
+        </TouchableOpacity>
     </View>
 
   );
@@ -34,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#293B91',
     height: 80,
     paddingTop:38,
-    paddingLeft:10,
+    //paddingLeft:20,
     flexDirection:'row',
   },
   headerText: {
@@ -44,7 +50,11 @@ const styles = StyleSheet.create({
   },
   button:{
     //backgroundColor: '#ffffff',
+    left:270,
+    top: 2,
+},
+button1:{
+    //backgroundColor: '#ffffff',
     bottom: 5,
 },
 });
-

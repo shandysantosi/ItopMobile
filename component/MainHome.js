@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -11,12 +11,13 @@ import {
   TouchableOpacity,
   Dimensions,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 const {width: WIDTH} = Dimensions.get('window');
 import AddIcon from 'react-native-vector-icons/Octicons';
 
 export default function MainHome() {
-
+  const navigation = useNavigation();
   return (
     <>
     <View style={styles.container}>
@@ -31,16 +32,14 @@ export default function MainHome() {
         </View>
     </View>
     <View style={styles.button}>
-        <TouchableOpacity style={styles.buttonTicket}>
             <Text style={styles.buttonTextTicket}>My Ticket</Text>
-        </TouchableOpacity>
     </View>
     <View style={styles.button2}>
-        <TouchableOpacity style={styles.buttonIncident}>
+        <TouchableOpacity style={styles.buttonIncident} onPress={() => navigation.navigate('Incident')}>
             <Text style={styles.buttonTextIncident}>Incident</Text>
         </TouchableOpacity>
         <View>
-            <TouchableOpacity style={styles.buttonRequest}>
+            <TouchableOpacity style={styles.buttonRequest} onPress={() => navigation.navigate('Request')}>
                 <Text style={styles.buttonTextRequest}>Request</Text>
             </TouchableOpacity>
         </View>
@@ -86,7 +85,7 @@ export default function MainHome() {
         </View>
     </View>
     <View style={styles.addTicket}>
-        <TouchableOpacity style={styles.addTicketButton}>
+        <TouchableOpacity style={styles.addTicketButton} onPress={() => navigation.navigate('Ticket')}>
         <AddIcon name={'diff-added'} size={40} color="#D9001B"
             style={styles.inputAddIcon}/>
         <Text style={styles.addText}>New Ticket</Text>
@@ -128,13 +127,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent : 'center',
     flexDirection:'row',
-    fontFamily: 'Arial'
-  },
-  buttonTicket:{
+    fontFamily: 'Arial',
     width: WIDTH-20,
     backgroundColor: '#D9001B',
-    marginVertical:5,
-    paddingVertical: 4,
+    marginVertical:7,
+    paddingVertical: 5,
   },
   buttonTextTicket:{
     fontSize: 15,

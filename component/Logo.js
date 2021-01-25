@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -24,7 +24,7 @@ export default function Logo() {
   
   const styles = StyleSheet.create({
     container: {
-      //flex: 1,
+      flex: 0,
       alignItems: 'center',
       justifyContent : 'center'
     },

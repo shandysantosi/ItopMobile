@@ -1,5 +1,5 @@
 
-import React from 'react';
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -21,9 +21,9 @@ export default function Home() {
     <ImageBackground source={require('../Images/login.png')} style={styles.background}>
       <StatusBar barStyle="dark-content" translucent backgroundColor="rgba(0,0,0,0)"/>
         <Header/>
-            <View style={styles.content}>
-                <NotifMain/>
-        </View>
+          <View style={styles.content}>
+              <NotifMain/>
+          </View>
     </ImageBackground>
   );
 }

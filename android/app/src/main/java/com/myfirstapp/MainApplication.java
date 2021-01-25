@@ -3,17 +3,22 @@ package com.myfirstapp;
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
+//import com.reactnativenavigation.NavigationApplication;
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
+//import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.soloader.SoLoader;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+//import com.oblador.vectoricons.VectorIconsPackage;
 
+
+//public class MainApplication extends NavigationApplication {
 public class MainApplication extends Application implements ReactApplication {
-
   private final ReactNativeHost mReactNativeHost =
-      new ReactNativeHost(this) {
+    new ReactNativeHost(this) {
+      //new NavigationReactNativeHost(this) {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;

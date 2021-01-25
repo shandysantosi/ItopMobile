@@ -13,24 +13,24 @@ import {
 
 
 
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Notif from './pages/Notif';
-import Incident from './pages/Incident';
-import Request from './pages/Request';
-import Ticket from './pages/CreateTicket';
+
+import Navigator from './routes/indexStack';
+
+//import all used images
 
 
 export default function App() {
+  
 
   return (
-    <ImageBackground source={require('./Images/login.png')} style={styles.background}>
-    <View style={styles.container}>
-      <StatusBar barStyle="dark-content" translucent backgroundColor="rgba(0,0,0,0)"/>
-        <Ticket/>
-    </View>
-    </ImageBackground>
+      <ImageBackground source={require('./Images/login.png')} style={styles.background}>
+      <View style={styles.container}>
+        <StatusBar barStyle="dark-content" translucent backgroundColor="rgba(0,0,0,0)"/>
+          <Navigator/>
+      </View>
+      </ImageBackground>
   );
+  
 }
 
 const styles = StyleSheet.create({

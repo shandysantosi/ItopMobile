@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import * as React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -10,12 +10,13 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
+import {useNavigation} from '@react-navigation/native';
 
 import BellIcon from 'react-native-vector-icons/FontAwesome';
 import BackIcon from 'react-native-vector-icons/AntDesign';
 
 export default function HeaderMain() {
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
 		<TouchableOpacity
@@ -25,7 +26,7 @@ export default function HeaderMain() {
         <BackIcon name={'left'} size={38} color="#ffffff"/>
       </TouchableOpacity>{/*button back*/}
         <Text style={styles.headerText}>Incident</Text>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Notif')}>
             <BellIcon name={'bell'} size={22} color="#D9001B"/>
         </TouchableOpacity>
     </View>
